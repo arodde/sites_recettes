@@ -1,4 +1,8 @@
-
+/*
+    Le style s'applique à un appareil responsive
+    - téléphone
+    - tablette
+*/
 *{
     overflow: auto;
 }
@@ -27,9 +31,8 @@ div.categorie {
 }
 div.contenu{
     background-color: #fff;
-    margin: 60px 10% 80px 10%;
-    padding: 0px 30px 30px 30px;
-    min-width: 350px;
+    margin: 40px 8px 80px 8%;
+    padding: 0px 8px 20px 8px;
     /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.2);
     overflow: visible;
@@ -69,15 +72,16 @@ table.info{
     width: 100%; 
     background-color: #6c829dc0; 
     color : #fff;
+    height: 50px;
 }
 table.info th{
-    font-size: 16px;
+    font-size: 14px;
     vertical-align: top;
     padding-bottom: 8px;
 }
 table.info td{
     text-align: center;
-    font-size: 13px;
+    font-size: 12px;
     vertical-align: bottom;
 }
 
@@ -105,12 +109,13 @@ div.colonne h2{
     padding-bottom: 5px;
 }
 div.colonne1{
-    width :30%;
+    /* width :30%; */
+    width :100%;
     background-color: #0000ff40;
     display:inline-block;
     
     box-sizing: border-box;
-    border-right: 5px solid #fff;
+    /* border-right: 5px solid #fff; */
 }
 div.colonne1 p{
     border : 1px solid lightgray;
@@ -118,8 +123,9 @@ div.colonne1 p{
     pad: 4px 0;
 }
 div.colonne2{
-    width :70%;
-    float : right;
+    /* width :70%;
+    float : right; */
+    width :100%;
     background-color: #ff000040;
     margin-bottom: 0px;
     font-size: 12px;
@@ -140,7 +146,7 @@ table.preparation td{
     vertical-align: top;
 }
 table.preparation tr {
-    height: 25px;
+    height: 5px;
 }
 td.preparation-etape{
     padding-left: 10px;
@@ -149,8 +155,84 @@ td.preparation-etape{
 
 div.bandeau{    
     /* garantie la hauteur égale des colonnes 1 et 2 */
-    display: flex;
-    align-items: stretch;
+    /* display: flex;
+    align-items: stretch; */
     /* box-sizing:content-box; */
     overflow: auto;
 }
+
+
+
+@media only screen and (min-width: 768px) {
+    /* 
+        pour une largeur d'écran égale ou supérieure à 768px,
+        le style s'applique à un ordinateur.
+    */
+            
+        div.contenu{            
+            min-width: 350px;     
+            max-width: 650px;     
+            
+            background-color: #fff;
+            margin: 60px 10px 80px 10%;
+            padding: 0px 30px 30px 30px;
+            /* offset-x | offset-y | blur-radius | spread-radius | color */
+            box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.2);
+            overflow: visible;       
+        }
+        
+        table.info{
+            position: absolute; 
+            bottom: 0px;
+            width: 100%; 
+            background-color: #6c829dc0; 
+            color : #fff;
+            height: 50px;
+        }
+        table.info th{
+            font-size: 14px;
+            /* vertical-align: top; */
+            padding-bottom: 0px;
+        }
+        table.info td{
+            text-align: center;
+            font-size: 12px;
+            /* vertical-align: bottom; */
+        }
+        
+        div.colonne1{
+            width :30%;
+            background-color: #0000ff40;
+            display:inline-block;
+            
+            box-sizing: border-box;
+            border-right: 5px solid #fff;
+        }
+        
+        div.colonne2{
+            width :70%;
+            float : right;
+            background-color: #ff000040;
+            margin-bottom: 0px;
+            font-size: 12px;
+        }
+
+        div.bandeau{    
+            /* garantie la hauteur égale des colonnes 1 et 2 */
+            display: flex;
+            align-items: stretch;
+            /* box-sizing:content-box; */
+            overflow: auto;
+        }
+  }
+
+  @media only screen and (min-width: 900px) {
+      /*
+        Le style s'applique aux grandes largeurs d'écran.
+      */
+    div.contenu{            
+        min-width: 350px;     
+        max-width: 650px;     
+        width: 644px; 
+    }
+  }
